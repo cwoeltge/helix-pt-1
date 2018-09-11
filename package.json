@@ -1,0 +1,25 @@
+{
+  "name": "template-helix",
+  "version": "1.0.0",
+  "description": "Helix Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwoeltge/helix-pt-1.git"
+  },
+  "keywords": [
+    "helix"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwoeltge/helix-pt-1/issues"
+  },
+  "homepage": "https://github.com/cwoeltge/helix-pt-1#readme",
+  "devDependencies": {
+    "webpack": "^4.18.0"
+  }
+}
