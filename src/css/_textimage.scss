@@ -13,6 +13,13 @@
       padding-top: $p-large;
     }
   }
+  &__img {
+    @include setParallax(300px);
+
+    @include breakpoint($desktop) {
+      height: 500px;
+    }
+ }
   &__txt {
     font-size: $font-base;
     font-style: normal;

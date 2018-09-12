@@ -3,9 +3,13 @@
 .cache/
 pipeline.log
 logs
-#node related files
+# node related files
 node_modules
 node
 typings
 npm-debug.log
 package-lock.json
+
+# content
+dist/bundle.js
+src/images/

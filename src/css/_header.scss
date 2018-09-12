@@ -6,14 +6,22 @@
     position: relative;
     .panel__base {
       position: absolute;
-      top: 50%;
+      top: 70%;
       left: 50%;
       transform: translateX(-50%);
       padding-top: 0;
+
+      @include breakpoint($desktop) {
+        top: 70%;
+      }
     }
   }
   &__parallaxImg {
-     @include setParallax(70%);
+     @include setParallax(400px);
+
+    @include breakpoint($desktop) {
+      height: 700px;
+    }
   }
   &__img {
     width: 100%;
