@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+// footer
+.footer {
+  &__base {
+    .panel__base {
+      padding-top: $p-small;
+    }
+  }
+  &__list {
+    text-align: center;
+    padding-bottom: $p-small;
+  }
+  &__listItem {
+    display: inline-block;
+  }
+  &__link {
+    color: #e3e4e4;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1;
+    padding: 0 5px;
+    -webkit-font-smoothing: antialiased;
+  }
+}

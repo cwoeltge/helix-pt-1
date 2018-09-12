@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+// page
+.body {
+  &__base {
+    background-color: $c-body-bg;
+    font-family: $font;
+  }
+}
+.main {
+  &__base {
+    background-color: #FFFFFF;
+    position: relative;
+    padding-bottom: $p-large;
+  }
+}
