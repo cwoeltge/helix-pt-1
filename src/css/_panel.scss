@@ -4,5 +4,7 @@
 .panel {
   &__base {
     padding-top: $p-large;
+    display: block;
+    margin: 0 auto;
   }
 }
