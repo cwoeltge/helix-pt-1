@@ -1,0 +1,56 @@
+@charset 'UTF-8';
+
+// atomic definitions
+.atomic {
+  &-grid {
+    &--fr2 {
+      @include breakpoint($desktop) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &--unit {
+      width: 100%;
+    }
+  }
+  &-align {
+    &--left {
+      float: left;
+      margin-right: 30px;
+    }
+    &--right {
+      float: right;
+      margin-left: 30px;
+    }
+    &--center {
+      margin: 0 auto;
+    }
+  }
+  &-size {
+    &--half {
+      max-width: 50%;
+    }
+    &--narrow {
+      width: 60%;
+    }
+  }
+  &-text {
+    &--narrow {
+      @include breakpoint($desktop) {
+        padding-top: 5%;
+      }
+    }
+  }
+  &-clear {
+    &--both {
+      &:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+  }
+  &-borderTop {
+    padding-top: $p-small;
+    border-top: 1px solid rgba(17,26,11,0.5);
+  }
+}
