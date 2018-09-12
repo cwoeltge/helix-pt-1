@@ -130,7 +130,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 }, function (n, t, e) {
   var o = e(2);"string" == typeof o && (o = [[n.i, o, ""]]);var r = { hmr: !0, transform: void 0, insertInto: void 0 };e(4)(o, r);o.locals && (n.exports = o.locals);
 }, function (n, t, e) {
-  (n.exports = e(3)(!1)).push([n.i, "@charset \"UTF-8\";\n/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after {\n  content: '';\n  content: none; }\n\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n@media (min-width: 1025px) {\n  .atomic-grid--fr2 {\n    grid-template-columns: repeat(2, 1fr); } }\n\n.atomic-grid--unit {\n  width: 100%; }\n\n.atomic-align--left {\n  float: left;\n  margin-right: 30px; }\n\n.atomic-align--right {\n  float: right;\n  margin-left: 30px; }\n\n.atomic-align--center {\n  margin: 0 auto; }\n\n.atomic-size--half {\n  max-width: 50%; }\n\n.atomic-size--narrow {\n  width: 60%; }\n\n@media (min-width: 1025px) {\n  .atomic-text--narrow {\n    padding-top: 5%; } }\n\n.atomic-clear--both:after {\n  content: '';\n  display: table;\n  clear: both; }\n\n.atomic-borderTop {\n  padding-top: 30px;\n  border-top: 1px solid rgba(17, 26, 11, 0.5); }\n\n.button__button {\n  display: block;\n  border-radius: 0.2em;\n  border: solid 1px black;\n  padding: 7px 17px;\n  margin-top: 40px;\n  font-size: 20px;\n  font-style: normal;\n  font-weight: 400;\n  text-transform: none;\n  line-height: 1.35;\n  letter-spacing: normal;\n  text-decoration: none;\n  text-align: center;\n  color: black;\n  transition: color .15s linear, background-color .15s ease-in-out, border-color .15s ease-in-out; }\n  .button__button--cta {\n    overflow: hidden;\n    border: 2px solid #82919b;\n    border-radius: 40px;\n    width: auto;\n    padding: 8px 20px 9px 20px;\n    text-align: center;\n    font-size: 16px;\n    line-height: 1;\n    color: #82919b;\n    vertical-align: middle;\n    text-decoration: none; }\n    .button__button--cta:before {\n      content: '\\2665'; }\n\n.footer__base .panel__base {\n  padding-top: 30px; }\n\n.footer__list {\n  text-align: center;\n  padding-bottom: 30px; }\n\n.footer__listItem {\n  display: inline-block; }\n\n.footer__link {\n  color: #e3e4e4;\n  font-size: 12px;\n  font-weight: 300;\n  line-height: 1;\n  padding: 0 5px;\n  -webkit-font-smoothing: antialiased; }\n\n.grid__base {\n  display: grid; }\n\n.header__base {\n  position: relative; }\n  .header__base .panel__base {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%);\n    padding-top: 0; }\n\n.header__img {\n  width: 100%; }\n\n.header__hl {\n  max-height: 3em;\n  color: white;\n  font-size: 50px;\n  font-style: normal;\n  font-weight: 100;\n  text-transform: none;\n  line-height: 1.0465;\n  letter-spacing: normal;\n  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }\n  @media (min-width: 1025px) {\n    .header__hl {\n      font-size: 50px; } }\n\n.header__subHl {\n  color: white;\n  font-size: 24px;\n  font-style: normal;\n  font-weight: 300;\n  text-transform: uppercase;\n  line-height: 1.605;\n  letter-spacing: normal;\n  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }\n  @media (min-width: 1025px) {\n    .header__subHl {\n      max-height: 5em; } }\n\n.body__base {\n  background-color: #35414d;\n  font-family: \"proxima-nova,sans-serif\"; }\n\n.main__base {\n  background-color: #FFFFFF;\n  position: relative;\n  padding-bottom: 80px; }\n\n.panel__base {\n  padding-top: 80px; }\n\n.textimage__base--right, .textimage__base--left {\n  width: 50%; }\n\n.textimage__img + .textimage__wrapper .textimage__txt {\n  padding-top: 40px; }\n\n.textimage__txt {\n  font-size: 20px;\n  font-style: normal;\n  font-weight: 300;\n  text-transform: none;\n  line-height: 1.6;\n  letter-spacing: normal;\n  color: #111a0b; }\n  .textimage__txt strong {\n    font-weight: bold; }\n  .textimage__txt i {\n    font-style: italic; }\n  .textimage__txt a {\n    color: #529fc6;\n    text-decoration: underline; }\n\n.video__base {\n  position: relative;\n  width: 100%; }\n\n.video__video {\n  position: relative;\n  display: block; }\n", ""]);
+  (n.exports = e(3)(!1)).push([n.i, "@charset \"UTF-8\";\n/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after {\n  content: '';\n  content: none; }\n\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n@supports (grid-area: auto) {\n  @media (min-width: 1025px) {\n    .atomic-grid--fr2 {\n      grid-template-columns: repeat(2, 1fr); } } }\n\n@supports (grid-area: auto) {\n  .atomic-grid--fr2 {\n    width: 100%; } }\n\n.atomic-grid--fr2 .grid__unit {\n  width: 50%; }\n\n.atomic-grid--unit {\n  width: 100%; }\n\n.atomic-align--left {\n  float: left; }\n  @supports (grid-area: auto) {\n    .atomic-align--left {\n      float: none; } }\n\n.atomic-align--right {\n  float: right; }\n  @supports (grid-area: auto) {\n    .atomic-align--right {\n      float: none; } }\n\n.atomic-align--center {\n  display: block;\n  margin: 0 auto; }\n\n.atomic-size--half {\n  max-width: 50%; }\n\n.atomic-size--narrow {\n  width: 60%; }\n\n@media (min-width: 1025px) {\n  .atomic-text--narrow {\n    padding-top: 5%; } }\n\n.atomic-clear--both:after {\n  content: '';\n  display: table;\n  clear: both; }\n\n.atomic-borderTop {\n  padding-top: 30px;\n  border-top: 1px solid rgba(17, 26, 11, 0.5); }\n\n.atomic-panel--full {\n  width: 100%; }\n\n.atomic-panel--narrow {\n  width: 60%; }\n\n.button__button {\n  background-color: white;\n  color: black;\n  border-radius: 0.2em;\n  border-color: black;\n  border-width: 1px;\n  border-style: solid;\n  font-size: 20px;\n  font-weight: 400;\n  font-style: normal;\n  line-height: 1.35;\n  transition: all 0.15s ease-in-out;\n  padding: 7px 17px;\n  margin-top: 40px;\n  text-transform: none;\n  text-decoration: none;\n  text-align: center; }\n  .button__button--cta {\n    border-color: #82919b;\n    border-width: 2px;\n    border-style: solid;\n    background-color: white;\n    color: #82919b;\n    border-radius: 40px;\n    padding: 8px 20px 9px 20px;\n    font-size: 16px;\n    line-height: 1;\n    vertical-align: middle; }\n    .button__button--cta:before {\n      content: '\\2665'; }\n\n.footer__base .panel__base {\n  padding-top: 30px; }\n\n.footer__list {\n  text-align: center;\n  padding-bottom: 30px; }\n\n.footer__listItem {\n  display: inline-block; }\n\n.footer__link {\n  color: #e3e4e4;\n  font-size: 12px;\n  font-weight: 300;\n  line-height: 1;\n  padding: 0 5px;\n  -webkit-font-smoothing: antialiased; }\n\n.grid__base {\n  display: block; }\n  @supports (grid-area: auto) {\n    .grid__base {\n      display: grid; } }\n\n.header__base {\n  position: relative; }\n  .header__base .panel__base {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%);\n    padding-top: 0; }\n\n.header__img {\n  width: 100%; }\n\n.header__hl {\n  max-height: 3em;\n  color: white;\n  font-size: 50px;\n  font-style: normal;\n  font-weight: 100;\n  text-transform: none;\n  line-height: 1.0465;\n  letter-spacing: normal;\n  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }\n  @media (min-width: 1025px) {\n    .header__hl {\n      font-size: 50px; } }\n\n.header__subHl {\n  color: white;\n  font-size: 24px;\n  font-style: normal;\n  font-weight: 300;\n  text-transform: uppercase;\n  line-height: 1.605;\n  letter-spacing: normal;\n  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }\n  @media (min-width: 1025px) {\n    .header__subHl {\n      max-height: 5em; } }\n\n.body__base {\n  background-color: #35414d;\n  font-family: \"Titillium Web\", sans-serif; }\n\n.main__base {\n  background-color: #FFFFFF;\n  position: relative;\n  padding-bottom: 80px; }\n\n.panel__base {\n  padding-top: 80px;\n  display: block;\n  margin: 0 auto; }\n\n.textimage__base--right, .textimage__base--left {\n  width: 50%; }\n\n.textimage__img + .textimage__wrapper .textimage__txt {\n  padding-top: 80px; }\n\n.textimage__txt {\n  font-size: 20px;\n  font-style: normal;\n  font-weight: 300;\n  text-transform: none;\n  line-height: 1.6;\n  letter-spacing: normal;\n  color: #111a0b; }\n  .textimage__txt strong {\n    font-weight: bold; }\n  .textimage__txt i {\n    font-style: italic; }\n  .textimage__txt a {\n    color: #529fc6;\n    text-decoration: underline; }\n\n.video__base {\n  position: relative;\n  width: 100%; }\n\n.video__video {\n  position: relative;\n  display: block; }\n", ""]);
 }, function (n, t) {
   n.exports = function (n) {
     var t = [];return t.toString = function () {
@@ -180,7 +180,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
       a = null,
       s = 0,
       l = [],
-      c = e(5);function f(n, t) {
+      c = e(5);function d(n, t) {
     for (var e = 0; e < n.length; e++) {
       var r = n[e],
           i = o[r.id];if (i) {
@@ -189,7 +189,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
         var s = [];for (a = 0; a < r.parts.length; a++) s.push(m(r.parts[a], t));o[r.id] = { id: r.id, refs: 1, parts: s };
       }
     }
-  }function d(n, t) {
+  }function f(n, t) {
     for (var e = [], o = {}, r = 0; r < n.length; r++) {
       var i = n[r],
           a = t.base ? i[0] + t.base : i[0],
@@ -201,13 +201,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }function p(n) {
     if (null === n.parentNode) return !1;n.parentNode.removeChild(n);var t = l.indexOf(n);t >= 0 && l.splice(t, 1);
-  }function h(n) {
+  }function b(n) {
     var t = document.createElement("style");if (void 0 === n.attrs.type && (n.attrs.type = "text/css"), void 0 === n.attrs.nonce) {
       var o = function () {
         0;return e.nc;
       }();o && (n.attrs.nonce = o);
-    }return b(t, n.attrs), u(n, t), t;
-  }function b(n, t) {
+    }return h(t, n.attrs), u(n, t), t;
+  }function h(n, t) {
     Object.keys(t).forEach(function (e) {
       n.setAttribute(e, t[e]);
     });
@@ -215,9 +215,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     var e, o, r, i;if (t.transform && n.css) {
       if (!(i = t.transform(n.css))) return function () {};n.css = i;
     }if (t.singleton) {
-      var l = s++;e = a || (a = h(t)), o = x.bind(null, e, l, !1), r = x.bind(null, e, l, !0);
+      var l = s++;e = a || (a = b(t)), o = v.bind(null, e, l, !1), r = v.bind(null, e, l, !0);
     } else n.sourceMap && "function" == typeof URL && "function" == typeof URL.createObjectURL && "function" == typeof URL.revokeObjectURL && "function" == typeof Blob && "function" == typeof btoa ? (e = function (n) {
-      var t = document.createElement("link");return void 0 === n.attrs.type && (n.attrs.type = "text/css"), n.attrs.rel = "stylesheet", b(t, n.attrs), u(n, t), t;
+      var t = document.createElement("link");return void 0 === n.attrs.type && (n.attrs.type = "text/css"), n.attrs.rel = "stylesheet", h(t, n.attrs), u(n, t), t;
     }(t), o = function (n, t, e) {
       var o = e.css,
           r = e.sourceMap,
@@ -225,7 +225,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
           s = n.href;n.href = URL.createObjectURL(a), s && URL.revokeObjectURL(s);
     }.bind(null, e, t), r = function () {
       p(e), e.href && URL.revokeObjectURL(e.href);
-    }) : (e = h(t), o = function (n, t) {
+    }) : (e = b(t), o = function (n, t) {
       var e = t.css,
           o = t.media;o && n.setAttribute("media", o);if (n.styleSheet) n.styleSheet.cssText = e;else {
         for (; n.firstChild;) n.removeChild(n.firstChild);n.appendChild(document.createTextNode(e));
@@ -238,10 +238,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
       } else r();
     };
   }n.exports = function (n, t) {
-    if ("undefined" != typeof DEBUG && DEBUG && "object" != typeof document) throw new Error("The style-loader cannot be used in a non-browser environment");(t = t || {}).attrs = "object" == typeof t.attrs ? t.attrs : {}, t.singleton || "boolean" == typeof t.singleton || (t.singleton = r()), t.insertInto || (t.insertInto = "head"), t.insertAt || (t.insertAt = "bottom");var e = d(n, t);return f(e, t), function (n) {
+    if ("undefined" != typeof DEBUG && DEBUG && "object" != typeof document) throw new Error("The style-loader cannot be used in a non-browser environment");(t = t || {}).attrs = "object" == typeof t.attrs ? t.attrs : {}, t.singleton || "boolean" == typeof t.singleton || (t.singleton = r()), t.insertInto || (t.insertInto = "head"), t.insertAt || (t.insertAt = "bottom");var e = f(n, t);return d(e, t), function (n) {
       for (var r = [], i = 0; i < e.length; i++) {
         var a = e[i];(s = o[a.id]).refs--, r.push(s);
-      }n && f(d(n, t), t);for (i = 0; i < r.length; i++) {
+      }n && d(f(n, t), t);for (i = 0; i < r.length; i++) {
         var s;if (0 === (s = r[i]).refs) {
           for (var l = 0; l < s.parts.length; l++) s.parts[l]();delete o[s.id];
         }
@@ -251,7 +251,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     var n = [];return function (t, e) {
       return n[t] = e, n.filter(Boolean).join("\n");
     };
-  }();function x(n, t, e, o) {
+  }();function v(n, t, e, o) {
     var r = e ? "" : o.css;if (n.styleSheet) n.styleSheet.cssText = g(t, r);else {
       var i = document.createTextNode(r),
           a = n.childNodes;a[t] && n.removeChild(a[t]), a.length ? n.insertBefore(i, a[t]) : n.appendChild(i);
