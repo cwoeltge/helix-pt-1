@@ -53,4 +53,13 @@
     padding-top: $p-small;
     border-top: 1px solid rgba(17,26,11,0.5);
   }
+
+  &-panel {
+    &--full {
+      width: 100%;
+    }
+    &--narrow {
+      width: 60%;
+    }
+  }
 }
