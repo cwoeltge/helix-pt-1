@@ -12,4 +12,3 @@ package-lock.json
 
 # content
 dist/bundle.js
-src/images/
