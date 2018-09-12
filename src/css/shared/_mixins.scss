@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+// parallax effect
+@mixin setParallax($height) {
+  height: $height;  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+// button
+@mixin setButton($c-bg, $c-label, $r-radius) {
+  background-color: $c-bg;
+  color: $c-label;
+  border-radius: $r-radius;
+}
+
+// transition
+@mixin setTransition($t-type, $t-effect) {
+  transition: $t-type .15s $t-effect;
+}
+
+// font
+@mixin setFont($f-size, $f-weight, $f-style, $f-height) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  font-style: $f-style;
+  line-height: $f-height;
+}
+
+// border
+@mixin setBorder($b-width, $b-style, $b-color) {
+  border-color: $b-color;
+  border-width: $b-width;
+  border-style: $b-style;
+}

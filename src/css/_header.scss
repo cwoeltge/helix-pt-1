@@ -12,6 +12,9 @@
       padding-top: 0;
     }
   }
+  &__parallaxImg {
+     @include setParallax(70%);
+  }
   &__img {
     width: 100%;
   }
