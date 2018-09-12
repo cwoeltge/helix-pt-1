@@ -2,5 +2,8 @@
 
 // grid
 .grid__base {
-  display: grid;
+  display: block;
+  @supports(grid-area: auto) {
+    display: grid;
+  }
 }
