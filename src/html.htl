@@ -18,7 +18,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />    
-        <title>${it.resource.title}</title>
+        <title>${payload.resource.title}</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -27,8 +27,8 @@
           <header class="header__base">
               <img class="header__img" alt="" src="https://spark.adobe.com/page/q628G2xmABPde/images/c91a80c3-3023-40f0-af1b-9911a9e5f25b.jpg">
               <div class="panel__base atomic-panel--full">
-                <h1 class="header__hl">${it.resource.title}</h1>
-                <h2 class="header__subHl">${it.resource.subHeadline}</h2>
+                <h1 class="header__hl">${payload.resource.title}</h1>
+                <h2 class="header__subHl">${payload.resource.subHeadline}</h2>
               </div>
           </header>
         <main class="main__base">
@@ -43,8 +43,8 @@
                   </div>
               </div>
           </div>
-          <div data-sly-list="${it.resource.children}" class="panel__base atomic-panel--full">
-            <div class="textimage__base">${item}</div>
+          <div data-sly-list="${payload.resource.children}" class="panel__base atomic-panel--full">
+            ${item}
           </div>
           <div class="panel__base atomic-panel--full atomic-clear--both">
             <div class="textimage__base grid__base atomic-grid--fr2">
@@ -88,7 +88,7 @@
                     <ul class="footer__list">
                       <li class="footer__listItem"><a class="footer__link" href="#">Terms</a></li>
                       <li class="footer__listItem"><a class="footer__link" href="#">Conditions</a></li>
-                      <em>generated at ${it.resource.time}</em>
+                      <em>generated at ${payload.resource.time}</em>
                     </ul>
                 </nav>
             </div>
