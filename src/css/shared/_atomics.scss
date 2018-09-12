@@ -4,8 +4,16 @@
 .atomic {
   &-grid {
     &--fr2 {
-      @include breakpoint($desktop) {
-        grid-template-columns: repeat(2, 1fr);
+      @supports(grid-area: auto) {
+        @include breakpoint($desktop) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @supports(grid-area: auto) {
+        width: 100%;
+      }
+      .grid__unit {
+        width: 50%;
       }
     }
     &--unit {
@@ -15,13 +23,18 @@
   &-align {
     &--left {
       float: left;
-      margin-right: 30px;
+      @supports(grid-area: auto) {
+        float: none;
+      }
     }
     &--right {
       float: right;
-      margin-left: 30px;
+      @supports(grid-area: auto) {
+        float: none;
+      }
     }
     &--center {
+      display: block;
       margin: 0 auto;
     }
   }
