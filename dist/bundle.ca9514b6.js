@@ -103,7 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"../dist/bundle.js":[function(require,module,exports) {
+})({"js/bundle.js":[function(require,module,exports) {
 !function (n) {
   var t = {};function e(o) {
     if (t[o]) return t[o].exports;var r = t[o] = { i: o, l: !1, exports: {} };return n[o].call(r.exports, r, r.exports, e), r.l = !0, r.exports;
@@ -271,5 +271,5 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     });
   };
 }]);
-},{}]},{},["../dist/bundle.js"], null)
-//# sourceMappingURL=/bundle.a4ce4268.map
+},{}]},{},["js/bundle.js"], null)
+//# sourceMappingURL=/bundle.ca9514b6.map
