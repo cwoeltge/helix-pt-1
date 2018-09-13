@@ -22,18 +22,14 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body class="body__base"> 
     <main data-sly-list.section="${content.sections.children}">
         <sly data-sly-test="${section.type=='hero'}">
             <!-- hero section -->
             <section class="${content.sections.hero.sectionClass}">
-                <div class="hero_wrapper">
-                    <div class="hero_text">
-                        <div class="hero_title">${content.sections.hero.p}</div>
-                    </div>
-                </div>
+                <div class="hero_title">${content.title}</div>
+                <div class="hero_subtitle">${content.sections.hero.p}</div>
                 <div class="hero_img">${content.sections.hero.img}</div>
             </section>
         </sly>
