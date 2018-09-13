@@ -26,7 +26,7 @@
     }
   }
   &__img + .textimage__wrapper {
-    .textimage__txt {
+    @include breakpoint($desktop) {
       padding-top: $p-large;
     }
   }
