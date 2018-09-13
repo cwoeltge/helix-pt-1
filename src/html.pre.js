@@ -19,16 +19,64 @@
 /**
  * The 'pre' function that is executed before the HTML is rendered
  * @param payload The current payload of processing pipeline
- * @param payload.resource The content resource
+ * @param payload.content The content resource
  */
 function pre(payload) {
-  payload.resource.time = `${new Date()}`;
-  payload.resource.subHeadline = getSubheadline(payload.resource)
-  payload.resource.image = getMainImage(payload.resource)
+  payload.content.time = `${new Date()}`;
+  payload.content.subHeadline = getSubheadline(payload.content)
+  payload.content.image = getMainImage(payload.content)
+  splitMain(payload.content)
+  splitSections(payload.content)
+}
+
+function splitSections(resource) {
+  sectionCounter = 0
+  resource.sections = []
+  resource.images = []
+
+  resource.sections[sectionCounter] = { elements: [], images: []};
+
+  resource.children.forEach(function (child) {
+    if(isHeadline(child)) {
+      if(resource.sections[sectionCounter].headline !== undefined) {
+        sectionCounter++;
+        resource.sections[sectionCounter] = { elements: [], images: []};
+      }
+      resource.sections[sectionCounter].headline = child;
+    } else {
+      if (isImage(child)) {
+        resource.sections[sectionCounter].images.push(child);
+        resource.images.push(child);
+      }
+      resource.sections[sectionCounter].elements.push(child);
+    }
+  });
+  resource.header = resource.sections[0]
+}
+
+// that certainly needs work. should work with mdast instead
+function isHeadline(child) {
+  return child.startsWith('<h1') || child.startsWith('<h2') 
+}
+
+// that certainly needs work. should work with mdast instead
+function isImage(child) {
+  return (child.indexOf('<img ') > -1)
+}
+
+function splitMain(resource) {
+  resource.header = []
+  resource.main = []
+  resource.children.some(function (child) {
+    if (resource.header.length<4) {
+      resource.header.push(child)    
+    } else {
+      resource.main.push(child)
+    }
+  });
 }
 
 function getMainImage(resource) {
-  headlineFound = false;
   returnValue = "";
   resource.mdast.children.some(function (child) {
     if (child.type == 'paragraph' && child.children[0].type == 'image') {

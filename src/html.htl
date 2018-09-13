@@ -22,13 +22,26 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body class="body__base"> 
-
-      <div data-sly-list="${payload.resource.children}">
-          <div class="container">${item}</div>
-      </div>
-
+      <div>Images total: (${payload.resource.images.length})</div>
+      <header>
+          ${payload.resource.header.images[0]}
+          ${payload.resource.header.headline}
+          ${payload.resource.header.elements[2]}
+      </header>
+      <main>
+        <section data-sly-list.section="${payload.resource.sections}">
+          <header> 
+            ${section.headline} Images this section: (${section.images.length})
+          </header>
+          <div data-sly-list="${section.elements}">
+            <div class="gallery" data-sly-test="${section.images.length > 2}">${item}</div>
+            <div data-sly-test="${section.images.length <= 2}">${item}</div>
+          </div>
+        </section>
+      </main>
       <hr>
       <em>generated at ${payload.resource.time}</em>
   </body>
