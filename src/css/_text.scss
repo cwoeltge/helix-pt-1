@@ -1,5 +1,4 @@
 @charset 'UTF-8';
-$m-buttontop: 40px;
 $p-buttonpadding-h: 17px;
 $p-buttonpadding-v: 7px;
 
@@ -45,7 +44,7 @@ $p-buttonpadding-v: 7px;
       @include setFont($font-base, 400, normal, 1.35);
       @include setTransition(all, $style-easeinout);
       padding: $p-buttonpadding-v $p-buttonpadding-h;
-      margin-top: $m-buttontop;
+      margin-top: $m-small;
       text-align: center;
 
       &:hover,
