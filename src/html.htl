@@ -25,37 +25,20 @@
     <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body class="body__base"> 
-
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 24 20" focusable="false">
-                <path fill="#FF0000" d="M15.1,0H24v20L15.1,0z M8.9,0H0v20L8.9,0z M12,7.4L17.6,20h-3.8l-1.6-4H8.1L12,7.4z"></path>
-            </svg>
-            <span>Adobe Developers</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">APIs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">Console</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-
-    </nav>
-
-    <main>${content.sections}</main>
+    <main data-sly-list.section="${content.sections.children}">
+        <sly data-sly-test="${section.type=='hero'}">
+            <!-- hero section -->
+            <section class="${content.sections.hero.sectionClass}">
+                <div class="hero_wrapper">
+                    <div class="hero_text">
+                        <div class="hero_title">${content.sections.hero.p}</div>
+                    </div>
+                </div>
+                <div class="hero_img">${content.sections.hero.img}</div>
+            </section>
+        </sly>
+        <sly data-sly-test="${section.type!='hero'}">${section.html}</sly>
+      </main>
+    <script type="text/javascript" src="js/bundle.js"></script>
   </body>
 </html>

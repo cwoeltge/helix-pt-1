@@ -16,7 +16,7 @@
  *
  */
 const select = require('unist-util-select');
-const visit = require('unist-util-visit');
+const hastSelect = require('hast-util-select').select
 const toHAST = require('mdast-util-to-hast');
 const toHTML = require('hast-util-to-html');
 const mdastSqueezeParagraphs = require('mdast-squeeze-paragraphs');
@@ -40,8 +40,6 @@ const LayoutMachine = {
     return this.states[this.states.length - 1];
   },
   set state(v) {
-    console.log(`${this.state} -> ${v}`);
-
     this.states.push(v);
     return v;
   },
@@ -95,8 +93,8 @@ const LayoutMachine = {
   isHero(section) {
     // If the section has an h2 & an image in the first level, it's a hero
     const image = select(section, 'image');
-    const h = select(section, 'heading');
-    return (h.length == 1 && (h[0].depth == 1 || h[0].depth == 2) && image.length == 1);
+    const p = select(section, 'paragraph');
+    return (p.length == 1 && image.length == 1);
   },
 
   isGallery(section) {
@@ -106,7 +104,11 @@ const LayoutMachine = {
   },
 }
 
-function getSmartDesign(mdast) {
+function getSmartDesign(mdast, breakSection) {
+  breakSection = breakSection ? breakSection : function (node) {
+    return node.type == 'thematicBreak';
+  };
+
   mdast = mdastFlattenImages()(mdast);
   mdast = mdastFlattenLists()(mdast);
   mdast = mdastSqueezeParagraphs(mdast);
@@ -122,16 +124,20 @@ function getSmartDesign(mdast) {
   let title;
 
   mdastNodes.forEach(function (node) {
-    if (node.type == "heading" && node.depth == 1 && !title) {
+    if (node.type == 'heading' && node.depth == 1 && !title) {
       title = node.children[0].value;
       return;
     }
-    if (node.type == "thematicBreak") {
+    const br = breakSection(node);
+    if (br.break) {
       sections.push(LayoutMachine.layout(currentSection));
       currentSection = {
         children: [],
         type: 'standard'
       };
+      if (br.include) {
+        currentSection.children.push(node);
+      }
     } else {
       currentSection.children.push(node);
     }
@@ -156,10 +162,45 @@ function computeSectionsHAST(sections) {
         className: section.class + ' ' + ((odd = !odd) ? 'odd' : 'even'),
       },
       tagName: 'section',
-      children: hast.children
+      children: hast.children,
+      data: {
+        type: section.class
+      }
     });
   });
   return nodes;
+}
+
+function sectionsPipeline(payload, breakSection) {
+  // get the sections MDAST
+  const sectionsMdast = getSmartDesign(payload.content.mdast, breakSection);
+
+  // get the sections MDAST
+  const sectionsHAST = computeSectionsHAST(sectionsMdast);
+
+  // create a "convienence object" that gives access to individual mdast, hast and html for each section.
+  const sectionsDetails = [];
+
+  sectionsMdast.forEach(function (mdast, index) {
+    const hast = sectionsHAST[index];
+    sectionsDetails.push({
+      mdast: mdast,
+      hast: hast,
+      html: toHTML(hast),
+      type: hast.data.type
+    });
+  });
+
+  // convert full HAST to html
+  const html = toHTML({
+    type: 'root',
+    children: sectionsHAST
+  });
+
+  return {
+    html,
+    children: sectionsDetails
+  }
 }
 
 /**
@@ -182,14 +223,30 @@ function pre(payload) {
     }
   }
 
-  const sections = getSmartDesign(payload.content.mdast);
-  console.log('sections', sections);
-  const sectionsHAST = computeSectionsHAST(sections);
-  const html = toHTML({
-    type: 'root',
-    children: sectionsHAST
-  })
-  payload.content.sections = html;
+  const determineBreaks = function(mdast) {
+    const isTB = mdast.type == 'thematicBreak'; // ---
+    const isH2 = mdast.type == 'heading' && mdast.depth == 2;
+    return {
+      break: isTB || isH2,
+      include: isH2
+    }
+  }
+  payload.content.sections = sectionsPipeline(payload, determineBreaks);
+
+  // EXTENSION point demo
+  // -> I need a different DOM for the hero section
+  if (payload.content.sections.children.length > 0 && payload.content.sections.children[0].type == 'hero') {
+    const hero = payload.content.sections.children[0].hast;
+    const img = hastSelect('img', hero);
+    const p = hastSelect('p', hero);
+
+    // create object to be consumed in HTML to render custom HTML for hero section
+    payload.content.sections.hero = {
+      sectionClass: hero.properties.className,
+      img: toHTML(img),
+      p: toHTML(p)
+    };
+  }
 
   // avoid htl execution error if missing
   payload.content.meta = payload.content.meta || {};

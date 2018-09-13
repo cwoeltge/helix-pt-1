@@ -19,12 +19,14 @@
 # Netcentric Experience
 6 November 2018 - Fotografskia Stockholm
 
+## The Event
 We are excited to invite you to our *exclusive launch event in Stockholm at the iconic Fotografiska Stockholm* where we want to celebrate the opening of our activities and team in the Nordics region on Tuesday 6th November 2018 starting 6.00 pm.
 
 [Register Now](laura.jollit@netcentric.biz)
 
 Come, see, exchange and learn *how AI enables our client Siemens to change the brands perception fundamentally* and talk to the team in person. Presentations by *Conrad Wöltge* will be followed by a great dinner in the same location.
 
+## Join
 Being the EMEA Adobe Experience Cloud partner of the year in 2018, we could not resist to start working for great clients using Adobe technology in the Nordics which resulted in setting up our local team in Stockholm and Copenhagen. We must say, all our 450+ Adobe experts working across multiple locations in Europe are looking forward to working on great projects, perhaps for you and other new customers in the region.
 Please RSVP today by replying to this email or contact (laura.jollit@netcentric.biz). We look forward to meet you there! [Mark Van der Wal](mark.vanderwal@netcentric.biz), Managing Director [Netcentric, A Cognizant Digital Business](www.netcentric.biz)
 
