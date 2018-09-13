@@ -16,83 +16,46 @@
   ~ limitations under the License.
   -->
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />    
-        <title>${payload.resource.title}</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    </head>
-    <body class="body__base"> 
-          <header class="header__base">
-              <img class="header__img" alt="" src="https://spark.adobe.com/page/q628G2xmABPde/images/c91a80c3-3023-40f0-af1b-9911a9e5f25b.jpg">
-              <div class="panel__base atomic-panel--full">
-                <h1 class="header__hl">${payload.resource.title}</h1>
-                <h2 class="header__subHl">${payload.resource.subHeadline}</h2>
-              </div>
-          </header>
-        <main class="main__base">
-          <div class="panel__base atomic-panel--full atomic-clear--both">
-              <div class="textimage__base grid__base">
-                    <!-- if image/then image -->
-                  <div class="textimage__wrapper atomic-grid--unit">
-                    <!-- if text/then text -->
-                    <p class="textimage__txt atomic-text--narrow atomic-size--narrow atomic-align--center">We are excited to invite you to our exclusive launch event in Stockholm at the iconic Fotografiska Stockholm where we want to celebrate the opening of our activities and team in the Nordics region on Tuesday 6th November 2018 starting 6.00 pm.</p>
-                    <!-- if button/then button -->
-                    <button class="button__button atomic-align--center">Register Now</button>
-                  </div>
-              </div>
-          </div>
-          <div data-sly-list="${payload.resource.children}" class="panel__base atomic-panel--full">
-            ${item}
-          </div>
-          <div class="panel__base atomic-panel--full atomic-clear--both">
-            <div class="textimage__base grid__base atomic-grid--fr2">
-                  <!-- if image/then image -->
-                <img class="textimage__img atomic-grid--unit" alt="" src="https://spark.adobe.com/page/q628G2xmABPde/images/9a39f95b-af26-4065-9189-441285383d85.jpg" />
-                <div class="textimage__wrapper atomic-grid--unit">
-                  <!-- if text/then text -->
-                  <p class="textimage__txt atomic-text--narrow atomic-size--narrow atomic-align--center">Come, see, exchange and learn how AI enables our client Siemens to change the brands perception fundamentally and talk to the team in person. Presentations by Conrad Wöltge will be followed by a great dinner in the same location.</p>
-                  <!-- if button/then button -->
-                  <button class="button__button atomic-align--center">Register Now</button>
-                </div>
-            </div>
-          </div>
-          <div class="panel__base atomic-panel--full atomic-clear--both">
-              <div class="textimage__base grid__base">
-                    <!-- if image/then image -->
-                  <div class="textimage__wrapper atomic-grid--unit">
-                    <!-- if text/then text -->
-                    <p class="textimage__txt atomic-size--narrow atomic-align--center">Being the EMEA Adobe Experience Cloud partner of the year in 2018, we could not resist to start working for great clients using Adobe technology in the Nordics which resulted in setting up our local team in Stockholm and Copenhagen. We must say, all our 450+ Adobe experts working across multiple locations in Europe are looking forward to working on great projects, perhaps for you and other new customers in the region.</p>
-                    <!-- if button/then button -->
-                    <button class="button__button atomic-align--center">Register Now</button>
-                  </div>
-              </div>
-          </div>
-          <div class="panel__base atomic-panel--full atomic-align--center"></div>
-              <div class="video__base">
-                <video class="video__video atomic-size--narrow atomic-align--center" src="https://youtube.com/embed/WWT0jaIjOHQ?enablejsapi=1" controls></video>
-              </div>
-          </div>
-          <div class="panel__base atomic-panel--full atomic-clear--both">
-              <div class="textimage__base atomic-size--narrow atomic-align--center atomic-borderTop">
-                  <div class="textimage__wrapper atomic-grid--unit">
-                    <button class="button__button button__button--cta atomic-align--center">Appreciate</button>
-                  </div>
-              </div>
-          </div>
-        </main>
-        <footer class="footer__base">
-            <div class="panel__base atomic-panel--full atomic-clear--both">
-                <nav class="footer__nav atomic-size--narrow atomic-align--center">
-                    <ul class="footer__list">
-                      <li class="footer__listItem"><a class="footer__link" href="#">Terms</a></li>
-                      <li class="footer__listItem"><a class="footer__link" href="#">Conditions</a></li>
-                      <em>generated at ${payload.resource.time}</em>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
-        <script type="text/javascript" src="js/bundle.js"></script>
-    </body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />    
+    <title>${content.title}</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body class="body__base"> 
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 24 20" focusable="false">
+                <path fill="#FF0000" d="M15.1,0H24v20L15.1,0z M8.9,0H0v20L8.9,0z M12,7.4L17.6,20h-3.8l-1.6-4H8.1L12,7.4z"></path>
+            </svg>
+            <span>Adobe Developers</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">APIs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Console</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+
+    </nav>
+
+    <main>${content.sections}</main>
+  </body>
 </html>
