@@ -28,7 +28,11 @@ Come, see, exchange and learn *how AI enables our client Siemens to change the b
 
 ## Join
 Being the EMEA Adobe Experience Cloud partner of the year in 2018, we could not resist to start working for great clients using Adobe technology in the Nordics which resulted in setting up our local team in Stockholm and Copenhagen. We must say, all our 450+ Adobe experts working across multiple locations in Europe are looking forward to working on great projects, perhaps for you and other new customers in the region.
-Please RSVP today by replying to this email or contact (laura.jollit@netcentric.biz). We look forward to meet you there! [Mark Van der Wal](mark.vanderwal@netcentric.biz), Managing Director [Netcentric, A Cognizant Digital Business](www.netcentric.biz)
+Please RSVP today by replying to this email or contact (laura.jollit@netcentric.biz). We look forward to meet you there!
+
+[Mark Van der Wal](mark.vanderwal@netcentric.biz), Managing Director 
+
+[Netcentric, A Cognizant Digital Business](www.netcentric.biz)
 
 [Register Now](laura.jollit@netcentric.biz)
 

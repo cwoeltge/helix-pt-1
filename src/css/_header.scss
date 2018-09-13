@@ -6,8 +6,8 @@
     position: relative;
     .panel__base {
       position: absolute;
-      top: 47%;
-      left: 47%;
+      top: 70%;
+      left: 53%;
       transform: translateX(-50%);
       padding-top: 0;
 
@@ -15,13 +15,26 @@
         top: 50%;
         left: 50%;
       }
+
+      p {
+        color: $c-white;
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 1.605;
+        text-shadow: 0px 2px 2px $c-black-25;
+  
+        @include breakpoint($desktop) {
+          max-height: 5em;
+        }
+      }
     }
   }
   &__parallaxImg {
-     @include setParallax(400px);
+     @include setParallax(400px, 'mobile');
 
     @include breakpoint($desktop) {
-      height: 700px;
+      @include setParallax(700px, 'desktop');
     }
   }
   &__img {
@@ -41,20 +54,5 @@
     @include breakpoint($desktop) {
       font-size: 50px;
     }
-  }
-
-  &__subHl {
-      color: $c-white;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 300;
-      text-transform: uppercase;
-      line-height: 1.605;
-      letter-spacing: normal;
-      text-shadow: 0px 2px 2px $c-black-25;
-
-      @include breakpoint($desktop) {
-        max-height: 5em;
-      }
   }
 }

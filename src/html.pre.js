@@ -161,7 +161,7 @@ function computeSectionsHAST(sections) {
       properties: {
         className: section.class + ' ' + ((odd = !odd) ? 'odd' : 'even'),
       },
-      tagName: 'section',
+      tagName: 'div',
       children: hast.children,
       data: {
         type: section.class

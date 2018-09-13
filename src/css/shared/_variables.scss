@@ -6,6 +6,8 @@ $desktop: min-width 1025px;
 // font definitions
 $font: 'Titillium Web', sans-serif;
 $font-base: 20px;
+$font-hl: 40px;
+$font-subHl: 32px;
 
 // colors
 $c-body-bg: #35414d;
@@ -24,6 +26,9 @@ $p-mini: 5px;
 
 // general margins
 $m-large: 80px;
-$m-medium: $p-large/2;
+$m-medium: 50px;
 $m-small: 30px;
 $m-mini: 5px;
+
+// other layout miscellaneous
+$g-safeheight: 150px;

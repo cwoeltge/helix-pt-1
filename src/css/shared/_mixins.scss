@@ -1,12 +1,21 @@
 @charset 'UTF-8';
 
 // parallax effect
-@mixin setParallax($height) {
-  height: $height;  
+@mixin setParallax($height, $device) {
+  $device: 'mobile' !default;
+
+  height: $height;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @if $device == 'mobile' {
+    background-position: top center;
+    background-size: contain; 
+  } @else {
+    background-position: center;
+    background-size: cover;
+  } 
 }
 // button
 @mixin setButton($c-bg, $c-label, $r-radius) {
@@ -40,4 +49,11 @@
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
+}
+
+%normalize {
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
 }

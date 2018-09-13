@@ -1,18 +1,30 @@
 @charset 'UTF-8';
+$m-buttontop: 40px;
+$p-buttonpadding-h: 17px;
+$p-buttonpadding-v: 7px;
 
-// textimage
-.textimage {
+// text
+.text {
   &__base {
+    color:$c-dark-grey;
+    margin-top: $m-medium;
+
     &--right,
     &--left {
       width: 50%;
     }
-    // RTE
-    p {
-      @include setFont($font-base, 300, normal, 1.6t);
+  }
+  &__wrapper {
+    margin-bottom: $m-large;
+    h2 {
+      @include setFont($font-subHl, 300, normal, 3);
       text-transform: none;
-      letter-spacing: normal;
+    }
+    p {
+      @include setFont($font-base, 300, normal, 1.6);
+      @extend %normalize;
       color:$c-dark-grey;
+      min-height: $g-safeheight;
     }
     strong {
       font-weight: bold;
@@ -26,38 +38,20 @@
     }
     a[href^="mailto:"] {
       @include setAbsoluteCenter();
+      @extend %normalize;
       display: inline-block;
       @include setButton($c-white, $c-black-100, 0.2em);
       @include setBorder(1px, solid, $c-black-100);
       @include setFont($font-base, 400, normal, 1.35);
       @include setTransition(all, $style-easeinout);
-      padding: 7px 17px;
-      margin-top: $p-medium;
-      text-transform: none;
-      text-decoration: none;
+      padding: $p-buttonpadding-v $p-buttonpadding-h;
+      margin-top: $m-buttontop;
       text-align: center;
 
       &:hover,
       &:focus {
         @include setButton($c-grey, $c-white, 0.2em);
       }
-    }
-  }
-  &__wrapper {
-    margin-bottom: $m-large;
-  }
-  &__img + .textimage__wrapper {
-    @include breakpoint($desktop) {
-      padding-top: $p-large;
-    }
-  }
-  &__img {
-    @include setParallax(300px);
-    // need fix parallax here with JS!
-    background-attachment: scroll;
-
-    @include breakpoint($desktop) {
-      height: 500px;
     }
   }
 }
