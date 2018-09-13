@@ -34,7 +34,7 @@ const LayoutMachine = {
       init -> hero, flow
       hero -> flow
   */
-  validStates: ['hero', 'flow', 'gallery'],
+  validStates: ['hero', 'flow', 'gallery', 'grid'],
   states: ['init'],
   get state() {
     return this.states[this.states.length - 1];
@@ -61,6 +61,8 @@ const LayoutMachine = {
           } else {
             if (this.isGallery(section)) {
               this.state = 'gallery';
+            } else if (this.isGrid(section)) {
+              this.state = 'grid';
             } else {
               this.state = 'flow';
             }
@@ -70,6 +72,8 @@ const LayoutMachine = {
         case 'hero':
           if (this.isGallery(section)) {
             this.state = 'gallery';
+          } else if (this.isGallery(section)) {
+            this.state = 'grid';
           } else {
             this.state = 'flow';
           }
@@ -101,6 +105,14 @@ const LayoutMachine = {
     // If the section has more than 2 images, it is a gallery
     const image = select(section, 'image');
     return image.length > 2
+  },
+
+  isGrid(section) {
+    // If the section has the first element
+    const image = select(section, 'image');
+    const p = select(section, 'paragraph');
+    const hl = select(section, 'h2');
+    return (p.length > 1 && image.length == 1 && hl != 0);
   },
 }
 

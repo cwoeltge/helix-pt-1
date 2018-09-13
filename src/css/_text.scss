@@ -6,7 +6,6 @@ $p-buttonpadding-v: 7px;
 .text {
   &__base {
     color:$c-dark-grey;
-    margin-top: $m-medium;
 
     &--right,
     &--left {
@@ -15,6 +14,7 @@ $p-buttonpadding-v: 7px;
   }
   &__wrapper {
     margin-bottom: $m-large;
+    padding-top: $p-medium;
     h2 {
       @include setFont($font-subHl, 300, normal, 3);
       text-transform: none;
