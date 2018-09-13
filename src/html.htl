@@ -24,17 +24,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body class="body__base"> 
+    <header data-sly-list.section="${content.sections.children}">
+      <sly data-sly-test="${section.type=='hero'}">
+        <div class="${content.sections.hero.sectionClass}">
+          <div class="header__parallaxImg" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
+          <div class="panel__base atomic-panel--narrow">
+            <h1 class="header__hl">${content.title}</h1>
+            ${content.sections.hero.p}
+          </div>
+        </div>
+      </sly>
+    </header>
     <main data-sly-list.section="${content.sections.children}">
-        <sly data-sly-test="${section.type=='hero'}">
-            <!-- hero section -->
-            <section class="${content.sections.hero.sectionClass}">
-                <div class="hero_title">${content.title}</div>
-                <div class="hero_subtitle">${content.sections.hero.p}</div>
-                <div class="hero_img">${content.sections.hero.img}</div>
-            </section>
-        </sly>
-        <sly data-sly-test="${section.type!='hero'}">${section.html}</sly>
-      </main>
+      <sly data-sly-test="${section.type!='hero'}">${section.html}</sly>
+    </main>
+
     <script type="text/javascript" src="js/bundle.js"></script>
   </body>
 </html>

@@ -243,6 +243,7 @@ function pre(payload) {
     // create object to be consumed in HTML to render custom HTML for hero section
     payload.content.sections.hero = {
       sectionClass: hero.properties.className,
+      imgUrl: img.properties.src,
       img: toHTML(img),
       p: toHTML(p)
     };
