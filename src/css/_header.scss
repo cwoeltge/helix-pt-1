@@ -6,13 +6,14 @@
     position: relative;
     .panel__base {
       position: absolute;
-      top: 70%;
-      left: 50%;
+      top: 47%;
+      left: 47%;
       transform: translateX(-50%);
       padding-top: 0;
 
       @include breakpoint($desktop) {
-        top: 70%;
+        top: 50%;
+        left: 50%;
       }
     }
   }
@@ -29,7 +30,7 @@
   &__hl {
     max-height: 3em;
     color: $c-white;
-    font-size: 50px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 100;
     text-transform: none;

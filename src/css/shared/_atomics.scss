@@ -43,7 +43,10 @@
       max-width: 50%;
     }
     &--narrow {
-      width: 60%;
+      width: 85%;
+      @include breakpoint($desktop) {
+        width: 60%;
+      }
     }
   }
   &-text {

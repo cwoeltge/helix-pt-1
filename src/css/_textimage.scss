@@ -25,6 +25,7 @@
       text-decoration: underline;
     }
     a[href^="mailto:"] {
+      @include setAbsoluteCenter();
       display: inline-block;
       @include setButton($c-white, $c-black-100, 0.2em);
       @include setBorder(1px, solid, $c-black-100);
@@ -42,6 +43,9 @@
       }
     }
   }
+  &__wrapper {
+    margin-bottom: $m-large;
+  }
   &__img + .textimage__wrapper {
     @include breakpoint($desktop) {
       padding-top: $p-large;
@@ -49,6 +53,8 @@
   }
   &__img {
     @include setParallax(300px);
+    // need fix parallax here with JS!
+    background-attachment: scroll;
 
     @include breakpoint($desktop) {
       height: 500px;

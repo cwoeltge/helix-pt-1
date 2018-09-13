@@ -34,3 +34,10 @@
   border-width: $b-width;
   border-style: $b-style;
 }
+
+// is absolutely centered
+@mixin setAbsoluteCenter() {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
