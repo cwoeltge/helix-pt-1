@@ -1,5 +1,6 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");  
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: "./src/index.js",
@@ -8,35 +9,27 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/dist"
   },
-  module: {
-    rules: [
+  module : {
+    rules : [
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          },
-          {
-            loader: "postcss-loader"
-          }
-        ]
+          test: /\.s?[ac]ss$/,
+          use: [
+              MiniCssExtractPlugin.loader,
+              { loader: 'css-loader', options: { url: false, sourceMap: true } },
+              { loader: 'sass-loader', options: { sourceMap: true } }
+          ],
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: "babel-loader"
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
+        filename: "all.css"
+    }) 
+  ],
+  mode : devMode ? 'development' : 'production'
 };
