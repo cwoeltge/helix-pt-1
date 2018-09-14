@@ -12,3 +12,4 @@ package-lock.json
 
 # content
 dist/
+src/js/bundle.js

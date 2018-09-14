@@ -41,8 +41,22 @@ $p-buttonpadding-v: 7px;
         font-style: italic;
       }
     }
+    ul {
+      text-align: center;
+      padding-bottom: $p-small;
+  
+      li {
+        display: inline-block;
+        
+        a {
+          @include setFont($font-small, 300, normal, 1);
+          color: $c-dark-grey;
+          padding: 0 $linkpaddingh;
+        }
+      }
+    }
     a {
-      color: rgba(82,159,198,1);
+      color: $c-blue;
       text-decoration: underline;
     }
     a[href^="mailto:"] {
@@ -52,14 +66,15 @@ $p-buttonpadding-v: 7px;
       @include setButton($c-white, $c-black-100, 0.2em);
       @include setBorder(1px, solid, $c-black-100);
       @include setFont($font-base, 400, normal, 1.35);
-      @include setTransition(all, $style-easeinout);
+      @include setTransition(all, $style-linear);
       padding: $p-buttonpadding-v $p-buttonpadding-h;
       margin-top: $m-small;
       text-align: center;
 
       &:hover,
       &:focus {
-        @include setButton($c-grey, $c-white, 0.2em);
+        @include setButton($c-dark-grey, $c-white, 0.2em);
+        border-color: $c-dark-grey;
       }
     }
   }
