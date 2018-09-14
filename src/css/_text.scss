@@ -19,6 +19,13 @@ $p-buttonpadding-v: 7px;
       @include setFont($font-subHl, 300, normal, 3);
       text-transform: none;
     }
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include setFont($font-base, 700, normal, 1.5);
+      text-transform: none;
+    } 
     p {
       @include setFont($font-base, 300, normal, 1.6);
       @extend %normalize;

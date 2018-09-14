@@ -2,7 +2,7 @@
 
 .image {
   &__img + .textimage__wrapper {
-    @include breakpoint($desktop) {
+    @include breakpoint($b-large) {
       padding-top: $p-large;
     }
   }
@@ -12,7 +12,7 @@
     background-attachment: scroll;
     background-size: cover;
 
-    @include breakpoint($desktop) {
+    @include breakpoint($b-large) {
       @include setParallax(500px, 'desktop')
     }
   }

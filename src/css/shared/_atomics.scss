@@ -5,7 +5,7 @@
   &-grid {
     &--fr2 {
       @supports(grid-area: auto) {
-        @include breakpoint($desktop) {
+        @include breakpoint($b-large) {
           grid-template-columns: repeat(2, 1fr);
 
           .grid__unit {
@@ -47,14 +47,14 @@
     }
     &--narrow {
       width: 85%;
-      @include breakpoint($desktop) {
+      @include breakpoint($b-large) {
         width: 60%;
       }
     }
   }
   &-text {
     &--narrow {
-      @include breakpoint($desktop) {
+      @include breakpoint($b-large) {
         padding-top: $p-mini;
       }
     }
@@ -80,7 +80,7 @@
     &--narrow {
       width: 90%;
 
-      @include breakpoint($desktop) {
+      @include breakpoint($b-large) {
         width: 50%;
       }
     }
