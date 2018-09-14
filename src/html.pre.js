@@ -125,10 +125,13 @@ const LayoutMachine = {
 
   isGrid(section) {
     // If the section has the first element
-    const image = select(section, 'image');
     const p = select(section, 'paragraph');
-    const hl = select(section, 'h2');
-    return (p.length > 1 && image.length == 1 && hl != 0);
+    const image = select(section, 'image');
+    return p.length >= 2 && image.length == 1;
+  },
+
+  isVideo(section) {
+    // should search for video. Video appears not to be an element of mdast
   },
 
   isFooter(section) {
@@ -280,6 +283,20 @@ function pre(payload) {
       imgUrl: img.properties.src || '',
       img: toHTML(img),
       p: toHTML(p)
+    };
+  }
+
+    // EXTENSION point demo
+  // -> I need a different DOM for the hero section
+  if (payload.content.sections.children.length > 0 && payload.content.sections.children[0].type == 'grid') {
+    const grid = payload.content.sections.children[0].hast;
+    const img = hastSelect('img', grid);
+
+    // create object to be consumed in HTML to render custom HTML for grid section
+    payload.content.sections.grid = {
+      sectionClass: grid.properties.className,
+      imgUrl: img.properties.src || '',
+      img: toHTML(img)
     };
   }
 

@@ -39,14 +39,14 @@
     </header>
     <main class="main__base">
       <div class="main__wrapper" data-sly-list.section="${content.sections.children}">
-        <sly data-sly-test="${section.type!='hero'}">
+        <sly data-sly-test="${section.type=='grid'}">
           <section class="panel__base grid__base atomic-panel--full atomic-clear--both">
             <div class="text__base atomic-grid--unit">
               <div class="text__wrapper atomic-grid--unit atomic-size--narrow atomic-align--center">
                 ${section.html}
               </div>
             </div>
-            <div class="image__img atomic-grid--units" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
+            <div class="image__img atomic-grid--units" style="background-image: url('${content.sections.grid.imgUrl @ context='uri'}')"></div>
           </div>
         </sly>
       </div>
