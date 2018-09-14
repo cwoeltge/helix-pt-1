@@ -3,7 +3,6 @@
 // Panel
 .panel {
   &__base {
-    display: block;
-    margin: 0 auto;
+    @extend %center;
   }
 }

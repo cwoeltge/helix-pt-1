@@ -46,7 +46,7 @@
                 ${section.html}
               </div>
             </div>
-            <div class="image__img atomic-grid--unit" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
+            <div class="image__img atomic-grid--units" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
           </div>
         </sly>
       </div>
@@ -57,7 +57,10 @@
     <div class="footer__wrapper">
       <div class="panel__base atomic-panel--full atomic-clear--both">
       <nav class="footer__nav atomic-size--narrow atomic-align--center">
-          <ul class="footer__list">
+          <ul class="footer__list" data-sly-list.section="${content.sections.children}">
+            <sly data-sly-test="${section.type!='hero'}">
+
+            </sly>
           </ul>
       </nav>
     </div>

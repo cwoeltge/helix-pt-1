@@ -24,6 +24,7 @@ We are excited to invite you to our *exclusive launch event in Stockholm at the 
 
 [Register Now](laura.jollit@netcentric.biz)
 
+## The Agenda
 Come, see, exchange and learn *how AI enables our client Siemens to change the brands perception fundamentally* and talk to the team in person. Presentations by *Conrad Wöltge* will be followed by a great dinner in the same location.(https://spark.adobe.com/page/q628G2xmABPde/images/9a39f95b-af26-4065-9189-441285383d85.jpg)
 
 ## Join
@@ -39,5 +40,5 @@ Learn more about *Netcentric, a Cognizant Digital Business*
 
 [Netcentric: About Us](https://youtube.com/embed/WWT0jaIjOHQ?enablejsapi=1)
 
-*[#] About us
-*[#] Terms and conditions
+*[www.netcentric.biz/about-us] About us
+*[www.netcentric.biz/terms-and-conditions] Terms and conditions

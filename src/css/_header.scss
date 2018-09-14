@@ -34,7 +34,7 @@
      @include setParallax(400px, 'mobile');
 
     @include breakpoint($desktop) {
-      @include setParallax(700px, 'desktop');
+      @include setParallax(600px, 'desktop');
     }
   }
   &__img {

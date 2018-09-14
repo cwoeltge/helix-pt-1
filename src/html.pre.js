@@ -34,7 +34,7 @@ const LayoutMachine = {
       init -> hero, flow
       hero -> flow
   */
-  validStates: ['hero', 'flow', 'gallery', 'grid'],
+  validStates: ['hero', 'flow', 'gallery', 'grid', 'footer'],
   states: ['init'],
   get state() {
     return this.states[this.states.length - 1];
@@ -61,7 +61,11 @@ const LayoutMachine = {
           } else {
             if (this.isGallery(section)) {
               this.state = 'gallery';
-            } else if (this.isGrid(section)) {
+            }
+            if (this.isFooter(section)) {
+              this.state = 'footer';
+            } 
+            if (this.isGrid(section)) {
               this.state = 'grid';
             } else {
               this.state = 'flow';
@@ -72,10 +76,14 @@ const LayoutMachine = {
         case 'hero':
           if (this.isGallery(section)) {
             this.state = 'gallery';
-          } else if (this.isGallery(section)) {
+          }
+          if (this.isFooter(section)) {
+            this.state = 'footer';
+          } 
+          if (this.isGrid(section)) {
             this.state = 'grid';
-          } else {
-            this.state = 'flow';
+          }  else {
+              this.state = 'flow';
           }
           break;
       }
@@ -92,6 +100,14 @@ const LayoutMachine = {
 
   get hasHero() {
     return this.states.includes('hero');
+  },
+
+  get hasGrid() {
+    return this.states.includes('grid');
+  },
+
+  get hasFooter() {
+    return this.states.includes('footer');
   },
 
   isHero(section) {
@@ -113,6 +129,12 @@ const LayoutMachine = {
     const p = select(section, 'paragraph');
     const hl = select(section, 'h2');
     return (p.length > 1 && image.length == 1 && hl != 0);
+  },
+
+  isFooter(section) {
+    // If the section has the first element
+    const i = select(section, 'listItem');
+    return (i.length >= 1);
   },
 }
 
@@ -255,7 +277,7 @@ function pre(payload) {
     // create object to be consumed in HTML to render custom HTML for hero section
     payload.content.sections.hero = {
       sectionClass: hero.properties.className,
-      imgUrl: img.properties.src,
+      imgUrl: img.properties.src || '',
       img: toHTML(img),
       p: toHTML(p)
     };
