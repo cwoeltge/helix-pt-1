@@ -238,4 +238,4 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   /******/ });
 },{}]},{},["js/bundle.js"], null)
-//# sourceMappingURL=/bundle.ca9514b6.map
+//# sourceMappingURL=/dist/bundle.ca9514b6.map
