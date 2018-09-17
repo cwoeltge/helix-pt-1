@@ -18,6 +18,10 @@ $p-buttonpadding-v: 7px;
     h2 {
       @include setFont($font-subHl, 300, normal, 3);
       text-transform: none;
+
+      + p:first-child {
+        margin-top: 0;
+      }
     }
     h3,
     h4,
@@ -32,6 +36,10 @@ $p-buttonpadding-v: 7px;
       color:$c-dark-grey;
       min-height: $g-safeheight;
 
+      &:first-child {
+        margin-top: $m-medium;
+      }
+
       strong,
       b,
       em {
@@ -42,8 +50,10 @@ $p-buttonpadding-v: 7px;
       }
     }
     ul {
+      border-top: 1px solid $c-grey;
       text-align: center;
-      padding-bottom: $p-small;
+      padding: $p-small 0;
+      margin: $m-large 0 $m-medium 0;
   
       li {
         display: inline-block;
@@ -68,7 +78,7 @@ $p-buttonpadding-v: 7px;
       @include setFont($font-base, 400, normal, 1.35);
       @include setTransition(all, $style-linear);
       padding: $p-buttonpadding-v $p-buttonpadding-h;
-      margin-top: $m-small;
+      margin-top: $m-medium;
       text-align: center;
 
       &:hover,
@@ -76,6 +86,10 @@ $p-buttonpadding-v: 7px;
         @include setButton($c-dark-grey, $c-white, 0.2em);
         border-color: $c-dark-grey;
       }
+    }
+    a[href*="youtu"] {
+      display: block;
+      margin-top: $m-small;
     }
   }
 }

@@ -4,5 +4,11 @@
 .panel {
   &__base {
     @extend %center;
+
+    &:last-child {
+      .image__img {
+        display: none;
+      }
+    }
   }
 }
