@@ -11,5 +11,4 @@ npm-debug.log
 package-lock.json
 
 # content
-dist/
-src/js/bundle.js
+# dist/
