@@ -43,7 +43,7 @@ p {
 img {
   width: 100%; }
 
-.text__wrapper p, .text__wrapper a[href^="mailto:"] {
+.button__button, .text__wrapper p, .text__wrapper a[href^="mailto:"] {
   font-style: normal;
   letter-spacing: normal;
   text-transform: none;
@@ -149,11 +149,9 @@ img {
   font-weight: 400;
   font-style: normal;
   line-height: 1.35;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.3s linear;
   padding: 7px 17px;
   margin-top: 40px;
-  text-transform: none;
-  text-decoration: none;
   text-align: center; }
   .button__button--cta {
     border-color: #82919b;
@@ -269,6 +267,9 @@ img {
   position: relative;
   padding-bottom: 80px; }
 
+.panel__base:last-child .image__img {
+  display: none; }
+
 .text__base {
   color: #111a0b; }
   .text__base--right, .text__base--left {
@@ -283,6 +284,8 @@ img {
     font-style: normal;
     line-height: 3;
     text-transform: none; }
+    .text__wrapper h2 + p:first-child {
+      margin-top: 0; }
   .text__wrapper h3,
   .text__wrapper h4,
   .text__wrapper h5,
@@ -299,12 +302,28 @@ img {
     line-height: 1.6;
     color: #111a0b;
     min-height: 150px; }
+    .text__wrapper p:first-child {
+      margin-top: 50px; }
     .text__wrapper p strong,
     .text__wrapper p b,
     .text__wrapper p em {
       font-weight: 700; }
     .text__wrapper p i {
       font-style: italic; }
+  .text__wrapper ul {
+    border-top: 1px solid #82919b;
+    text-align: center;
+    padding: 30px 0;
+    margin: 80px 0 50px 0; }
+    .text__wrapper ul li {
+      display: inline-block; }
+      .text__wrapper ul li a {
+        font-size: 16px;
+        font-weight: 300;
+        font-style: normal;
+        line-height: 1;
+        color: #111a0b;
+        padding: 0 5px; }
   .text__wrapper a {
     color: #529fc6;
     text-decoration: underline; }
@@ -324,14 +343,18 @@ img {
     font-weight: 400;
     font-style: normal;
     line-height: 1.35;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.3s linear;
     padding: 7px 17px;
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center; }
     .text__wrapper a[href^="mailto:"]:hover, .text__wrapper a[href^="mailto:"]:focus {
-      background-color: #82919b;
+      background-color: #111a0b;
       color: white;
-      border-radius: 0.2em; }
+      border-radius: 0.2em;
+      border-color: #111a0b; }
+  .text__wrapper a[href*="youtu"] {
+    display: block;
+    margin-top: 30px; }
 
 .video__base {
   position: relative;
