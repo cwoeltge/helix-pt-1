@@ -8,9 +8,17 @@
   }
 }
 .main {
-  &__base {
+  &__wrapper {
     background-color: $c-white;
     position: relative;
     padding-bottom: $p-large;
+  }
+}
+
+.section {
+  &__base:last-child {
+    .image__img {
+      display: none;
+    }
   }
 }
