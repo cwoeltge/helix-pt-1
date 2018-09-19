@@ -29,7 +29,7 @@
       <div class="header__wrapper" data-sly-list.section="${content.sections.children}">
         <sly data-sly-test="${section.type=='hero'}">
           <div class="${content.sections.hero.sectionClass}">
-            <div id="heroImg" class="header__parallaxImg" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
+            <div id="heroImg" class="header__parallaxImg" style="background-image: url('${payload.content.banner.img @ context='uri'}')"></div>
             <div id="heroHl" class="panel__base atomic-panel--narrow">
               <h1 class="header__hl">${content.title}</h1>
               ${content.sections.hero.p}
@@ -47,8 +47,7 @@
                 <div class="text__wrapper atomic-grid--unit atomic-size--narrow atomic-align--center">
                   ${section.html}
                 </div>
-              </div>
-              <div class="image__img atomic-grid--units" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
+              </div>          
             </div>
           </section>
         </sly>
