@@ -136,7 +136,7 @@ img {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-size: cover; } }
+      background-attachment: initial; } }
 
 .button__button {
   background-color: white;
@@ -149,6 +149,7 @@ img {
   font-weight: 400;
   font-style: normal;
   line-height: 1.35;
+  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   padding: 7px 17px;
   margin-top: 40px;
@@ -189,9 +190,9 @@ img {
     .grid__base {
       display: grid; } }
 
-.header__base {
+.header__wrapper {
   position: relative; }
-  .header__base .panel__base {
+  .header__wrapper .panel__base {
     position: absolute;
     top: 70%;
     left: 53%;
@@ -199,14 +200,14 @@ img {
             transform: translateX(-50%);
     padding-top: 0; }
     @media (min-width: 1025px) {
-      .header__base .panel__base {
+      .header__wrapper .panel__base {
         top: 50%;
         left: 50%; } }
     @media (max-width: 420px) {
-      .header__base .panel__base {
+      .header__wrapper .panel__base {
         top: 35%;
         left: 50%; } }
-    .header__base .panel__base p {
+    .header__wrapper .panel__base p {
       color: white;
       font-size: 24px;
       font-weight: 300;
@@ -214,7 +215,7 @@ img {
       line-height: 1.605;
       text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }
       @media (min-width: 1025px) {
-        .header__base .panel__base p {
+        .header__wrapper .panel__base p {
           max-height: 5em; } }
 
 .header__parallaxImg {
@@ -231,7 +232,7 @@ img {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-size: cover; } }
+      background-attachment: initial; } }
   @media (max-width: 420px) {
     .header__parallaxImg {
       height: 260px;
@@ -262,12 +263,12 @@ img {
   background-color: #35414d;
   font-family: "Titillium Web", sans-serif; }
 
-.main__base {
+.main__wrapper {
   background-color: white;
   position: relative;
   padding-bottom: 80px; }
 
-.panel__base:last-child .image__img {
+.section__base:last-child .image__img {
   display: none; }
 
 .text__base {
@@ -343,6 +344,7 @@ img {
     font-weight: 400;
     font-style: normal;
     line-height: 1.35;
+    -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
     padding: 7px 17px;
     margin-top: 50px;

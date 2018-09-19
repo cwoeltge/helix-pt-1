@@ -123,10 +123,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     };return r.d(t, "a", t), t;
   }, r.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, r.p = "/dist", r(r.s = 0);
-}([function (e, t, r) {
+  }, r.p = "/dist", r(r.s = 2);
+}([function (e, t, r) {},, function (e, t, r) {
   "use strict";
-  r.r(t);r(1);
-}, function (e, t, r) {}]);
+  r.r(t);r(0);!function () {
+    var e = document.getElementById("heroHl"),
+        t = document.getElementById("heroImg"),
+        r = t.offsetHeight;window.addEventListener("scroll", function () {
+      var n,
+          o = "scale(" + ((n = window.scrollY < 150 ? window.scrollY : 150) / r + 1) + ")",
+          u = "translate3d(" + -e.offsetWidth / 2 + "px, " + n + "px, 0px)";t.style.WebkitTransform = o, t.style.MozTransform = o, t.style.OTransform = o, t.style.transform = o, e.style.transform = u;
+    }, !1);
+  }();
+}]);
 },{}]},{},["js/bundle.js"], null)
 //# sourceMappingURL=/dist/bundle.ca9514b6.map
