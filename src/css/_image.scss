@@ -7,13 +7,12 @@
     }
   }
   &__img {
-    @include setParallax(300px, 'mobile');
+    @include setParallax(300px, 'mobile', scroll);
     // need fix parallax here with JS!
-    background-attachment: scroll;
     background-size: cover;
 
     @include breakpoint($b-large) {
-      @include setParallax(500px, 'desktop')
+      @include setParallax(500px, 'desktop', fixed)
     }
   }
 }

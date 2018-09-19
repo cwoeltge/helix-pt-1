@@ -36,14 +36,14 @@
     }
   }
   &__parallaxImg {
-    @include setParallax(400px, 'mobile');
+    @include setParallax(400px, 'mobile', fixed);
 
     @include breakpoint($b-large) {
-      @include setParallax(600px, 'desktop');
+      @include setParallax(600px, 'desktop', initial);
     }
 
     @include breakpoint($b-mini) {
-      @include setParallax(260px, 'mobile');
+      @include setParallax(260px, 'mobile', fixed);
     }
   }
   &__img {

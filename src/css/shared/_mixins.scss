@@ -1,11 +1,11 @@
 @charset 'UTF-8';
 
 // parallax effect
-@mixin setParallax($height, $device) {
+@mixin setParallax($height, $device, $att) {
   $device: 'mobile' !default;
 
   height: $height;
-  background-attachment: fixed;
+  background-attachment: $att;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -14,7 +14,6 @@
     background-size: contain; 
   } @else {
     background-position: center;
-    background-attachment: initial;
   } 
 }
 // button
