@@ -322,6 +322,13 @@ img {
         line-height: 1;
         color: #111a0b;
         padding: 0 5px; }
+  .text__wrapper h3 + ul {
+    margin-top: 30px; }
+    .text__wrapper h3 + ul li {
+      display: block;
+      line-height: 2;
+      text-align: left;
+      text-indent: 40px; }
   .text__wrapper a {
     color: #529fc6;
     text-decoration: underline; }
