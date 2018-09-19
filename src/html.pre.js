@@ -249,6 +249,7 @@ function pre(payload) {
     img: '',
     text: ''
   };
+  
   const firstImg = select(payload.content.mdast, 'image');
   if (firstImg.length > 0) {
     payload.content.banner = {
