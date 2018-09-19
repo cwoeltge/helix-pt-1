@@ -18,3 +18,7 @@ import './css/main.scss'
     })
   }); */
 
+  const grid = document.querySelectorAll('.grid');
+  grid.forEach(function(){
+    this.parentNode('.panel__base').classList.add('.atomic-grid--fr2');
+  })
