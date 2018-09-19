@@ -12,3 +12,6 @@ package-lock.json
 
 # content
 # dist/
+
+# css
+js/

@@ -29,8 +29,8 @@
       <div class="header__wrapper" data-sly-list.section="${content.sections.children}">
         <sly data-sly-test="${section.type=='hero'}">
           <div class="${content.sections.hero.sectionClass}">
-            <div class="header__parallaxImg" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
-            <div class="panel__base atomic-panel--narrow">
+            <div id="heroImg" class="header__parallaxImg" style="background-image: url('${content.sections.hero.imgUrl @ context='uri'}')"></div>
+            <div id="heroHl" class="panel__base atomic-panel--narrow">
               <h1 class="header__hl">${content.title}</h1>
               ${content.sections.hero.p}
             </div>
