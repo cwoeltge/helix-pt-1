@@ -122,12 +122,11 @@ img {
 
 .image__img {
   height: 300px;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   background-size: contain;
-  background-attachment: scroll;
   background-size: cover; }
   @media (min-width: 1025px) {
     .image__img {
@@ -135,8 +134,7 @@ img {
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
-      background-attachment: initial; } }
+      background-position: center; } }
 
 .button__button {
   background-color: white;
@@ -228,11 +226,10 @@ img {
   @media (min-width: 1025px) {
     .header__parallaxImg {
       height: 600px;
-      background-attachment: fixed;
+      background-attachment: initial;
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
-      background-attachment: initial; } }
+      background-position: center; } }
   @media (max-width: 420px) {
     .header__parallaxImg {
       height: 260px;
