@@ -65,6 +65,16 @@ $p-buttonpadding-v: 7px;
         }
       }
     }
+    h3 + ul {
+      margin-top: $m-small;
+    
+      li {
+        display: block;
+        line-height: 2;
+        text-align: left;
+        text-indent: $l-indent;
+      }
+    }
     a {
       color: $c-blue;
       text-decoration: underline;
